@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
-
+// import './App.css'
 
 function App() {
   const [length, setLength] = useState(8);
@@ -43,20 +43,20 @@ function App() {
 
   return (
     <>
-      <div className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto shadow-md rounded-lg px-4 sm:px-6 md:px-8 py-3 my-2 text-orange-500 bg-gray-800">
-        <h1 className="text-center text-white text-xl sm:text-2xl md:text-3xl font-semibold my-6">Password Generator</h1>
-        <div className='flex w-full shadow rounded-lg overflow-hidden mb-4'>
+      <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-4 my-8 text-orange-500 bg-gray-800'>
+        <h1 className=" text-center text-white my-3">Password Generator</h1>
+        <div className='flex shadow rounded-lg overflow-hidden mb-4'>
           <input type="text" value={Password} 
           placeholder='password' readOnly
           ref={passwordRef}
-          className="outline-none bg-white w-full py-2 px-3 rounded-l" 
+          className=' outline-none bg-white w-full py-1 px-3 my-2 rounded-l' 
           />
-          <button className="outline-none bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-r"
+          <button className='outline-none bg-blue-700 text-white px-3 py-1 my-2 rounded-r shrink-0'
           onClick={copyPasswordToClipboard}>copy</button>
         </div>
 
-        <div className='flex flex-col sm:flex-row text-sm gap-3 sm:gap-x-4 items-start sm:items-center pb-4'>
-          <div className='flex items-center gap-x-2'>
+        <div className='flex text-sm gap-x-2 pb-3'>
+          <div className='flex items-center gap-x-1'>
             <input type='range' min={6} max={100} value={length}
             className='cursor-pointer'
             onChange={(e)=>{setLength(e.target.value)}}
@@ -64,7 +64,7 @@ function App() {
             <label>Length:{length}</label>
           </div>
 
-          <div className='flex items-center gap-x-2'>
+          <div className='flex items-center gap-x-1'>
             <input type='checkbox' defaultChecked={numberAllowed} id='numberInput'
             onChange={()=>{
               setNumberAllowed((prev)=> !prev);
